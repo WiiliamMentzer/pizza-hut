@@ -2,7 +2,7 @@ function acquireToppings(event) {
   event.preventDefault();
   let toppings = [];
   document.querySelector('.toppings').checked.each(function() {
-    toppings.push(this.value);
+    toppings.push(document.getElementsByClassName(".toppings"));
   });
   console.log(toppings);
 }
