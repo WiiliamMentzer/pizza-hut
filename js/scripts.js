@@ -1,7 +1,7 @@
 function acquireToppings(event) {
   event.preventDefault();
   let toppings = [];
-  document.querySelector('.toppings').checked.each(function() {
+  document.querySelectorAll('.toppings:checked').forEach(function() {
     toppings.push(document.getElementsByClassName(".toppings"));
   });
   console.log(toppings);
