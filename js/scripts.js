@@ -13,7 +13,10 @@ function Pizza(toppings, size) {
   this.size = size
 }
 
+Pizza.prototype.acquireToppings = function() {
+
+}
 
 window.addEventListener("load", function() {
-  document.querySelector("form#SizeSelector").addEventListener("submit", acquireToppings);
+  document.querySelector("form#SizeSelector").addEventListener("submit", Pizza.acquireToppings);
 }); 
