@@ -15,5 +15,5 @@ function Pizza(toppings, size) {
 
 
 window.addEventListener("load", function() {
-  document.querySelector("form#toppingSelector").addEventListener("submit", acquireToppings);
+  document.querySelector("form#SizeSelector").addEventListener("submit", acquireToppings);
 }); 
