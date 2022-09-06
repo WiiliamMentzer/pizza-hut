@@ -22,4 +22,6 @@ Test: "it should read all checked boxes values and return the word Topping for n
 Code: document.querySelectorAll('.toppings:checked').forEach
 Expected Output: [Topping, Topping, Topping, Topping]
 
-
+Test: "it should read all checked boxes values and return the toppings selected"
+Code: document.querySelectorAll('.toppings:checked').forEach
+Expected Output: ['pepperoni', 'Sausage', 'Bacon', 'jalapeno']

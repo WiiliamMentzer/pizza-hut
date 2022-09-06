@@ -16,12 +16,8 @@ function Pizza(toppings, size) {
 Pizza.prototype.acquireToppings = function(event) {
   event.preventDefault();
   let toppings = [];
-  // document.querySelectorAll('.toppings:checked').forEach(function() {
-  //   toppings.push(document.getElementsByClassName(".toppings"));
-  //   console.log(toppings);
-  // });
-  document.querySelectorAll('.toppings:checked').forEach(function() {
-    toppings.push("topping");
+  document.querySelectorAll(".toppings:checked").forEach(function(element) {
+    toppings.push(element.name);
   });
   console.log(toppings);
 }
