@@ -1,27 +1,40 @@
-// function acquireToppings(event) {
-//   event.preventDefault();
-//   let toppings = [];
-//   document.querySelectorAll('.toppings:checked').forEach(function() {
-//     toppings.push(document.getElementsByClassName(".toppings"));
-//     console.log(toppings);
-//   });
-//   console.log(toppings);
-// }
+//Business Logic
 
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size
-}
+};
 
-Pizza.prototype.acquireToppings = function(event) {
+Pizza.prototype.toppingCost = function(toppings) {
+  let cost = ("$" + ((toppings.length * 2.50) + 10));
+  console.log(cost);
+};
+
+// UI Logic
+
+function acquireToppingsAndCost(event) {
   event.preventDefault();
+
   let toppings = [];
+
   document.querySelectorAll(".toppings:checked").forEach(function(element) {
-    toppings.push(element.name);
+    toppings.push(element.value);
   });
-  console.log(toppings);
-}
+
+  let size = document.querySelector(".sizes:checked").value;
+  let pizza = new Pizza(toppings, size);
+  
+  console.log(toppings, size);
+  console.log(pizza);
+
+  pizza.toppingCost(toppings);
+
+  document.querySelector('input[name="size"]:checked').checked = false;
+  document.querySelectorAll(".toppings:checked").forEach(function(element) {
+    element.checked = false;
+  });
+};
 
 window.addEventListener("load", function() {
-  document.querySelector("form#SizeSelector").addEventListener("submit", Pizza.prototype.acquireToppings);
+  document.querySelector("form#SizeSelector").addEventListener("submit", acquireToppingsAndCost);
 }); 
