@@ -17,6 +17,13 @@ function acquireToppingsAndCost(event) {
 
   let toppings = [];
 
+  if (document.querySelector(".sizes:checked") === null || document.querySelectorAll(".toppings:checked") === null) {
+    document.getElementById("error").removeAttribute("class");
+    return;
+  } else {
+    document.getElementById("error").setAttribute("class", "hidden");
+  };
+
   document.querySelectorAll(".toppings:checked").forEach(function(element) {
     toppings.push(element.value);
   });
