@@ -15,3 +15,11 @@ Describe: acquireToppings()
 Test: "it should return the checkboxed values into an array 
 Code: console.log(toppings);
 Expected Output: ["pepperoni", "bacon", "jalapenos"]
+
+Describe Pizza.Prototype.acquireToppings()
+
+Test: "it should read all checked boxes values and return the word Topping for number of boxes selected"
+Code: document.querySelectorAll('.toppings:checked').forEach
+Expected Output: [Topping, Topping, Topping, Topping]
+
+
