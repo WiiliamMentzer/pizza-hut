@@ -39,17 +39,27 @@
       <h2>Size?</h2><br>
       <div class="card">
         <label>
-          <input class="sizes" type="radio" name="size" value="small"> Small
+          <input class="sizes" type="radio" name="size" value="Small"> Small
         </label><br>
         <label>
-          <input class="sizes" type="radio" name="size" value="medium"> Medium
+          <input class="sizes" type="radio" name="size" value="Medium"> Medium
         </label><br>
         <label>
-          <input class="sizes" type="radio" name="size" value="large"> Large
+          <input class="sizes" type="radio" name="size" value="Large"> Large
         </label><br>
         <button type="submit">Lets get your pizza ready!</button>
       </div>
     </div>
   </form>
+  <div class="container" id="pizzaDisplay">
+    <div class="card">
+      <h3>Your selected Pizza Toppings:</h3>
+      <ul id="myToppings"></ul><br>
+      <h3>Your selected Pizza Size:</h3>
+      <ul id="mySize"></ul><br>
+      <h3>Your Pizza Cost:</h3>
+      <ul id="myCost"></ul>
+    </div>
+  </div>
 </body>
 </html>

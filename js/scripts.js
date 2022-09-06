@@ -8,6 +8,7 @@ function Pizza(toppings, size) {
 Pizza.prototype.toppingCost = function(toppings) {
   let cost = ("$" + ((toppings.length * 2.50) + 10));
   console.log(cost);
+  return(cost);
 };
 
 // UI Logic
@@ -28,13 +29,31 @@ function acquireToppingsAndCost(event) {
     toppings.push(element.value);
   });
 
+  document.getElementById("myToppings").innerHTML = "";
+  document.getElementById("mySize").innerHTML = "";
+  document.getElementById("myCost").innerHTML = "";
+
   let size = document.querySelector(".sizes:checked").value;
   let pizza = new Pizza(toppings, size);
-  
-  console.log(toppings, size);
-  console.log(pizza);
+  let pizzaToppingsDisplay = document.getElementById("myToppings");
+  let pizzaSizeDisplay = document.getElementById("mySize");
+  let pizzaCostDisplay = document.getElementById("myCost");
 
-  pizza.toppingCost(toppings);
+  toppings.forEach((element)=>{
+    let li = document.createElement("li");
+    li.innerText = element;
+    pizzaToppingsDisplay.appendChild(li);
+  })
+
+  let liSize = document.createElement("li");
+  liSize.innerText = size;
+  pizzaSizeDisplay.appendChild(liSize);
+
+  let liCost = document.createElement("li");
+  liCost.innerText = pizza.toppingCost(toppings);
+  pizzaCostDisplay.appendChild(liCost);
+
+  console.log(pizza);
 
   document.querySelector('input[name="size"]:checked').checked = false;
   document.querySelectorAll(".toppings:checked").forEach(function(element) {
